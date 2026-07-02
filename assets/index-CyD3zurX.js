@@ -3928,12 +3928,20 @@ void main() {
             </a>
             <div class="case-actions">
               ${e.bsgPath===null?'<span class="download-bsg download-bsg-disabled">No BSG</span>':`<a class="download-bsg" href="${mt(ms(e.bsgPath))}" download="${mt($x({item:e}))}">Download BSG</a>`}
+              <details class="share-qr">
+                <summary class="share-button">Share</summary>
+                <div class="share-panel">
+                  <img class="share-qr-image" src="${mt(shareQrPath({item:e}))}" alt="QR code for ${mt(co(e))}" loading="lazy" />
+                  <div class="share-qr-id">${mt(e.machineId)}</div>
+                  <a class="share-qr-link" href="${mt(sharePageUrl({item:e}))}" target="_blank" rel="noopener noreferrer">Open model page</a>
+                </div>
+              </details>
             </div>
           </article>
         `).join("")}
       </div>
     </div>
-  `)}function Ux({cases:i}){const e={ChosenCar:0,ChosenBridge:1,ChosenRocket:2};return i.map((t,n)=>({item:t,index:n})).sort((t,n)=>{const s=e[t.item.category],r=e[n.item.category];if(s===void 0)throw new Error(`Unknown category: ${t.item.category}`);if(r===void 0)throw new Error(`Unknown category: ${n.item.category}`);return s!==r?s-r:t.index-n.index}).map(({item:t})=>t)}function Nx(){Ph.innerHTML=`
+  `)}function Ux({cases:i}){const e={ChosenCar:0,ChosenBridge:1,ChosenRocket:2};return i.map((t,n)=>({item:t,index:n})).sort((t,n)=>{const s=e[t.item.category],r=e[n.item.category];if(s===void 0)throw new Error(`Unknown category: ${t.item.category}`);if(r===void 0)throw new Error(`Unknown category: ${n.item.category}`);return s!==r?s-r:t.index-n.index}).map(({item:t})=>t)}function shareQrPath({item:i}){return`./assets/share-qr/${i.machineId}.png`}function sharePageUrl({item:i}){return`https://build-arena-assets.github.io/?case=${encodeURIComponent(i.uid)}`}function Nx(){Ph.innerHTML=`
     <div class="layout split">
       <section class="left-pane">
         <div class="left-toolbar">
