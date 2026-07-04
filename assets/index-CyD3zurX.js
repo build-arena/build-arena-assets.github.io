@@ -3941,7 +3941,7 @@ void main() {
         `).join("")}
       </div>
     </div>
-  `)}function Ux({cases:i}){const e={ChosenCar:0,ChosenBridge:1,ChosenRocket:2};return i.map((t,n)=>({item:t,index:n})).sort((t,n)=>{const s=e[t.item.category],r=e[n.item.category];if(s===void 0)throw new Error(`Unknown category: ${t.item.category}`);if(r===void 0)throw new Error(`Unknown category: ${n.item.category}`);return s!==r?s-r:t.index-n.index}).map(({item:t})=>t)}function shareQrPath({item:i}){return`./assets/share-qr/${i.machineId}.png`}function sharePageUrl({item:i}){return`https://build-arena-assets.github.io/?case=${encodeURIComponent(i.uid)}`}function Nx(){Ph.innerHTML=`
+  `)}function Ux({cases:i}){const e={ChosenCar:0,ChosenBridge:1,ChosenRocket:2};return i.map((t,n)=>({item:t,index:n})).sort((t,n)=>{const s=e[t.item.category],r=e[n.item.category];if(s===void 0)throw new Error(`Unknown category: ${t.item.category}`);if(r===void 0)throw new Error(`Unknown category: ${n.item.category}`);return s!==r?s-r:t.index-n.index}).map(({item:t})=>t)}function shareQrPath({item:i}){return`./assets/share-qr/${i.machineId}.png`}function sharePageUrl({item:i}){return`https://build-arena.github.io/assets/?case=${encodeURIComponent(i.uid)}`}function Nx(){Ph.innerHTML=`
     <div class="layout split">
       <section class="left-pane">
         <div class="left-toolbar">
